@@ -10,7 +10,6 @@ function CountriesList(props) {
               className="list-group-item list-group-item-action"
               to={'/country/' + country.cca3}
               key={country.cca3}
-              // onClick={window.reload()}
             >
               {country.flag} {country.name.common}
             </Link>

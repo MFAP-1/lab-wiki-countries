@@ -13,9 +13,15 @@ class CountryDetails extends React.Component {
     borders: [],
   };
 
-  // componentDidMount = () => {
-  //   this.updateCurrentCountry();
-  // };
+  componentDidMount = () => {
+    this.updateCurrentCountry();
+  };
+
+  componentDidUpdate = (prevProps, prevState) => {
+    if (prevProps.match.params.cca3Code !== this.props.match.params.cca3Code) {
+      this.updateCurrentCountry();
+    }
+  };
 
   // to update the state given a new country
   updateCurrentCountry = () => {
@@ -52,9 +58,6 @@ class CountryDetails extends React.Component {
 
   // main redering method
   render() {
-    if (this.state.cca3 !== this.props.match.params.cca3Code) {
-      this.updateCurrentCountry();
-    }
     return (
       <div className="col-7">
         <h1>{this.state.name.common}</h1>

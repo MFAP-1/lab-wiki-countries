@@ -12,7 +12,7 @@ import countries from './countries.json';
 
 function App() {
   return (
-    <div>
+    <>
       <Navbar />
       <div className="container">
         <div className="row">
@@ -20,7 +20,7 @@ function App() {
           <Route path="/country/:cca3Code" component={CountryDetails} />
         </div>
       </div>
-    </div>
+    </>
   );
 }
 
